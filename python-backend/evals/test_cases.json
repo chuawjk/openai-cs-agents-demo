@@ -1,0 +1,62 @@
+[
+  {
+    "id": "tc_001",
+    "input": "What is your baggage policy?",
+    "criteria": "Should explain baggage allowances, weight limits, or carry-on rules"
+  },
+  {
+    "id": "tc_002",
+    "input": "Is WiFi available on my flight?",
+    "criteria": "Should answer whether WiFi is available on flights"
+  },
+  {
+    "id": "tc_003",
+    "input": "I need to cancel my upcoming flight",
+    "criteria": "Should help the customer cancel their flight or explain the cancellation process"
+  },
+  {
+    "id": "tc_004",
+    "input": "Can I see the seat map for my flight?",
+    "criteria": "Should display or describe the seat map for the customer's flight"
+  },
+  {
+    "id": "tc_005",
+    "input": "What is the status of flight FLT-123?",
+    "criteria": "Should provide the flight status for the specified flight number"
+  },
+  {
+    "id": "tc_006",
+    "input": "I would like to change my seat to a window seat",
+    "criteria": "Should help the customer change to a window seat or explain how to do so"
+  },
+  {
+    "id": "tc_007",
+    "input": "My flight was delayed and I missed my connection. Can I get compensation?",
+    "criteria": "Should acknowledge the situation and explain compensation options or next steps"
+  },
+  {
+    "id": "tc_008",
+    "input": "I need a front row seat for medical reasons",
+    "criteria": "Should assist with special seating accommodation for medical needs"
+  },
+  {
+    "id": "tc_009",
+    "input": "Can you help me book a new flight to New York?",
+    "criteria": "Should help the customer search for or book a flight to New York"
+  },
+  {
+    "id": "tc_010",
+    "input": "What is the refund policy for cancelled flights?",
+    "criteria": "Should explain the refund policy when flights are cancelled"
+  },
+  {
+    "id": "tc_011",
+    "input": "My baggage is missing, how do I file a claim?",
+    "criteria": "Should explain how to file a lost baggage claim"
+  },
+  {
+    "id": "tc_012",
+    "input": "What are the check-in times for my flight?",
+    "criteria": "Should provide check-in time information or windows"
+  }
+]
