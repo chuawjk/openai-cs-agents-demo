@@ -1,16 +1,22 @@
 import asyncio
 import csv
 import json
+import logging
 import os
 import sys
 from datetime import datetime, timezone
 
+import tqdm
+
 sys.path.insert(0, os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
+
+logging.getLogger("openai.agents").setLevel(logging.ERROR)
 
 from evals.judge import judge_response
 from evals.runner import run_agent
 
 _EVALS_DIR = os.path.dirname(__file__)
+_CSV_FIELDS = ["id", "category", "input", "criteria", "response", "passed", "reason", "run_timestamp"]
 
 
 def load_test_cases() -> list[dict]:
@@ -25,57 +31,50 @@ def _results_dir(run_timestamp: str) -> str:
     return path
 
 
-def write_results_csv(rows: list[dict], run_timestamp: str) -> str:
-    path = os.path.join(_results_dir(run_timestamp), "eval_results.csv")
-    fieldnames = ["id", "category", "input", "criteria", "response", "passed", "reason", "run_timestamp"]
-    with open(path, "w", newline="") as f:
-        writer = csv.DictWriter(f, fieldnames=fieldnames)
-        writer.writeheader()
-        writer.writerows(rows)
-    return path
-
-
-def write_traces_jsonl(traces: list[dict], run_timestamp: str) -> str:
-    path = os.path.join(_results_dir(run_timestamp), "traces.jsonl")
-    with open(path, "w") as f:
-        for trace in traces:
-            f.write(json.dumps(trace) + "\n")
-    return path
-
-
 async def run_evaluation() -> None:
     run_timestamp = datetime.now(timezone.utc).strftime("%Y%m%dT%H%M%SZ")
     test_cases = load_test_cases()
-    rows = []
-    traces = []
+    results_dir = _results_dir(run_timestamp)
+    csv_path = os.path.join(results_dir, "eval_results.csv")
+    jsonl_path = os.path.join(results_dir, "traces.jsonl")
 
-    for tc in test_cases:
-        print(f"Running {tc['id']}...", flush=True)
-        output = await run_agent(tc["input"])
-        verdict = judge_response(tc["input"], output.response, tc["criteria"])
-        rows.append({
-            "id": tc["id"],
-            "category": tc["category"],
-            "input": tc["input"],
-            "criteria": tc["criteria"],
-            "response": output.response,
-            "passed": verdict.passed,
-            "reason": verdict.reason,
-            "run_timestamp": run_timestamp,
-        })
-        traces.append({
-            "tc_id": tc["id"],
-            "run_timestamp": run_timestamp,
-            **output.trace,
-        })
-        status = "PASS" if verdict.passed else "FAIL"
-        print(f"  {status}: {verdict.reason}")
+    passed = 0
+    with (
+        open(csv_path, "w", newline="") as csv_file,
+        open(jsonl_path, "w") as jsonl_file,
+        tqdm.tqdm(total=len(test_cases), unit="case", ncols=80) as bar,
+    ):
+        writer = csv.DictWriter(csv_file, fieldnames=_CSV_FIELDS)
+        writer.writeheader()
 
-    passed = sum(1 for r in rows if r["passed"])
-    csv_path = write_results_csv(rows, run_timestamp)
-    jsonl_path = write_traces_jsonl(traces, run_timestamp)
+        for tc in test_cases:
+            bar.set_description(tc["id"])
+            output = await run_agent(tc["input"])
+            verdict = judge_response(tc["input"], output.response, tc["criteria"])
+
+            row = {
+                "id": tc["id"],
+                "category": tc["category"],
+                "input": tc["input"],
+                "criteria": tc["criteria"],
+                "response": output.response,
+                "passed": verdict.passed,
+                "reason": verdict.reason,
+                "run_timestamp": run_timestamp,
+            }
+            writer.writerow(row)
+            csv_file.flush()
+
+            trace = {"tc_id": tc["id"], "run_timestamp": run_timestamp, **output.trace}
+            jsonl_file.write(json.dumps(trace) + "\n")
+            jsonl_file.flush()
+
+            if verdict.passed:
+                passed += 1
+            bar.update(1)
+
     print(f"\nEvaluation complete.")
-    print(f"Passed: {passed}/{len(rows)}")
+    print(f"Passed: {passed}/{len(test_cases)}")
     print(f"Results:  {csv_path}")
     print(f"Traces:   {jsonl_path}")
 
