@@ -50,7 +50,7 @@ async def run_evaluation() -> None:
         for tc in test_cases:
             bar.set_description(tc["id"])
             output = await run_agent(tc["input"])
-            verdict = judge_response(tc["input"], output.response, tc["criteria"])
+            verdict = judge_response(tc["input"], output.response, tc["criteria"], trace=output.trace)
 
             row = {
                 "id": tc["id"],
