@@ -6,57 +6,497 @@
   },
   {
     "id": "tc_002",
-    "input": "Is WiFi available on my flight?",
-    "criteria": "Should answer whether WiFi is available on flights"
+    "input": "What is the weight limit for checked baggage?",
+    "criteria": "Should state the maximum weight allowed for checked bags (50 pounds)"
   },
   {
     "id": "tc_003",
-    "input": "I need to cancel my upcoming flight",
-    "criteria": "Should help the customer cancel their flight or explain the cancellation process"
+    "input": "What are the size restrictions for carry-on bags?",
+    "criteria": "Should provide carry-on dimensions or size limits"
   },
   {
     "id": "tc_004",
-    "input": "Can I see the seat map for my flight?",
-    "criteria": "Should display or describe the seat map for the customer's flight"
+    "input": "How many bags am I allowed to bring on the plane?",
+    "criteria": "Should clarify how many bags are permitted"
   },
   {
     "id": "tc_005",
-    "input": "What is the status of flight FLT-123?",
-    "criteria": "Should provide the flight status for the specified flight number"
+    "input": "Is there a fee for overweight luggage?",
+    "criteria": "Should mention overweight bag fees or direct to where that information can be found"
   },
   {
     "id": "tc_006",
-    "input": "I would like to change my seat to a window seat",
-    "criteria": "Should help the customer change to a window seat or explain how to do so"
+    "input": "My checked bag didn't arrive at the carousel. What should I do?",
+    "criteria": "Should explain how to file a baggage claim or what steps to take for a delayed bag"
   },
   {
     "id": "tc_007",
-    "input": "My flight was delayed and I missed my connection. Can I get compensation?",
-    "criteria": "Should acknowledge the situation and explain compensation options or next steps"
-  },
-  {
-    "id": "tc_008",
-    "input": "I need a front row seat for medical reasons",
-    "criteria": "Should assist with special seating accommodation for medical needs"
-  },
-  {
-    "id": "tc_009",
-    "input": "Can you help me book a new flight to New York?",
-    "criteria": "Should help the customer search for or book a flight to New York"
-  },
-  {
-    "id": "tc_010",
-    "input": "What is the refund policy for cancelled flights?",
-    "criteria": "Should explain the refund policy when flights are cancelled"
-  },
-  {
-    "id": "tc_011",
-    "input": "My baggage is missing, how do I file a claim?",
+    "input": "My baggage is missing. How do I file a claim?",
     "criteria": "Should explain how to file a lost baggage claim"
   },
   {
+    "id": "tc_008",
+    "input": "I've been waiting 40 minutes and my suitcase hasn't come off the belt.",
+    "criteria": "Should advise the customer on next steps for a delayed or missing bag"
+  },
+  {
+    "id": "tc_009",
+    "input": "Is WiFi available on my flight?",
+    "criteria": "Should confirm whether WiFi is available and provide the network name if known"
+  },
+  {
+    "id": "tc_010",
+    "input": "How do I connect to the in-flight WiFi?",
+    "criteria": "Should explain how to join the WiFi network"
+  },
+  {
+    "id": "tc_011",
+    "input": "Is the WiFi free or do I need to pay for it?",
+    "criteria": "Should clarify whether WiFi is complimentary or paid"
+  },
+  {
     "id": "tc_012",
+    "input": "How many seats are in business class?",
+    "criteria": "Should state the number of business class seats"
+  },
+  {
+    "id": "tc_013",
+    "input": "Where are the exit rows on the plane?",
+    "criteria": "Should identify which rows are exit rows"
+  },
+  {
+    "id": "tc_014",
+    "input": "Which rows have extra legroom?",
+    "criteria": "Should identify Economy Plus rows or extra legroom seating"
+  },
+  {
+    "id": "tc_015",
+    "input": "How many total seats does the plane have?",
+    "criteria": "Should state the total seat count"
+  },
+  {
+    "id": "tc_016",
+    "input": "What's the difference between Economy and Economy Plus?",
+    "criteria": "Should describe Economy Plus benefits such as extra legroom"
+  },
+  {
+    "id": "tc_017",
+    "input": "What compensation do you offer for long delays?",
+    "criteria": "Should describe delay compensation such as hotel, meals, or travel credit"
+  },
+  {
+    "id": "tc_018",
+    "input": "Am I entitled to a hotel if my flight is delayed overnight?",
+    "criteria": "Should confirm whether hotel accommodation is provided for overnight delays"
+  },
+  {
+    "id": "tc_019",
+    "input": "What is your policy for missed connections caused by a delay?",
+    "criteria": "Should explain what support is offered when a delay causes a missed connection"
+  },
+  {
+    "id": "tc_020",
+    "input": "Do you offer meal vouchers for delays?",
+    "criteria": "Should confirm whether meal vouchers are available and under what conditions"
+  },
+  {
+    "id": "tc_021",
+    "input": "How long does a delay have to be before I qualify for compensation?",
+    "criteria": "Should state the minimum delay threshold that triggers compensation eligibility"
+  },
+  {
+    "id": "tc_022",
+    "input": "Can I get miles or travel credit for a disrupted flight?",
+    "criteria": "Should mention miles or travel credit as a compensation option"
+  },
+  {
+    "id": "tc_023",
+    "input": "What is the status of flight FLT-123?",
+    "criteria": "Should provide the current flight status for the requested flight number"
+  },
+  {
+    "id": "tc_024",
+    "input": "Is flight PA441 on time?",
+    "criteria": "Should look up and report the on-time status of flight PA441"
+  },
+  {
+    "id": "tc_025",
+    "input": "What gate does flight PA441 depart from?",
+    "criteria": "Should provide departure gate information for PA441"
+  },
+  {
+    "id": "tc_026",
+    "input": "What time does flight NY802 depart?",
+    "criteria": "Should provide the scheduled departure time for flight NY802"
+  },
+  {
+    "id": "tc_027",
+    "input": "Can you check if flight FLT-456 is running on time?",
+    "criteria": "Should check and report the on-time status of flight FLT-456"
+  },
+  {
+    "id": "tc_028",
+    "input": "Is there a delay on flight PA441?",
+    "criteria": "Should report the delay status of PA441 and mention connection impact if relevant"
+  },
+  {
+    "id": "tc_029",
+    "input": "I'm on PA441 from Paris. Will the delay cause me to miss NY802?",
+    "criteria": "Should confirm the connection risk between PA441 and NY802 due to the delay"
+  },
+  {
+    "id": "tc_030",
+    "input": "My flight PA441 is delayed. What are my options?",
+    "criteria": "Should explain the delay situation and offer rebooking options or alternatives"
+  },
+  {
+    "id": "tc_031",
+    "input": "Are there any alternate flights to New York if PA441 is delayed?",
+    "criteria": "Should list or search for available alternative flights to New York"
+  },
+  {
+    "id": "tc_032",
+    "input": "I need to get to Austin tonight. What flights are available?",
+    "criteria": "Should search for and present available flights to Austin"
+  },
+  {
+    "id": "tc_033",
+    "input": "Can you help me book a new flight to New York?",
+    "criteria": "Should assist with finding and booking a flight to New York"
+  },
+  {
+    "id": "tc_034",
+    "input": "I need to book a flight to Austin.",
+    "criteria": "Should help the customer book a flight to Austin"
+  },
+  {
+    "id": "tc_035",
+    "input": "Please book me on the next available replacement flight.",
+    "criteria": "Should find and book the next available replacement flight with seat assignment"
+  },
+  {
+    "id": "tc_036",
+    "input": "I'd like to book the replacement flight to Austin.",
+    "criteria": "Should book the replacement flight and confirm the new booking details"
+  },
+  {
+    "id": "tc_037",
+    "input": "Can I book an earlier flight to New York?",
+    "criteria": "Should search for and offer an earlier flight option to New York"
+  },
+  {
+    "id": "tc_038",
+    "input": "Please secure me a seat on the first available replacement flight.",
+    "criteria": "Should book the first available replacement flight with a confirmed seat assignment"
+  },
+  {
+    "id": "tc_039",
+    "input": "I need to cancel my upcoming flight.",
+    "criteria": "Should cancel the flight and confirm cancellation with details"
+  },
+  {
+    "id": "tc_040",
+    "input": "Please cancel my booking.",
+    "criteria": "Should cancel the reservation and confirm it is cancelled"
+  },
+  {
+    "id": "tc_041",
+    "input": "I want to cancel my trip to Paris.",
+    "criteria": "Should cancel the Paris flight and provide a cancellation confirmation"
+  },
+  {
+    "id": "tc_042",
+    "input": "Cancel my reservation. My confirmation number is ABC123.",
+    "criteria": "Should cancel the reservation using the provided confirmation number"
+  },
+  {
+    "id": "tc_043",
+    "input": "I'd like to cancel my flight and understand my refund options.",
+    "criteria": "Should cancel the flight and explain what refund or credit the customer can expect"
+  },
+  {
+    "id": "tc_044",
+    "input": "I no longer need my seat on flight NY802. Please cancel it.",
+    "criteria": "Should cancel the booking on NY802 and confirm cancellation"
+  },
+  {
+    "id": "tc_045",
+    "input": "My Paris flight was cancelled. Can you rebook me on the next available flight?",
+    "criteria": "Should find and book an alternative flight after the cancellation"
+  },
+  {
+    "id": "tc_046",
+    "input": "I missed my connection from New York to Austin. I need a new flight.",
+    "criteria": "Should find and book a replacement flight to Austin"
+  },
+  {
+    "id": "tc_047",
+    "input": "Flight PA441 is delayed 4 hours. I'll miss my Austin connection. Please rebook me.",
+    "criteria": "Should rebook the customer on an alternative Austin flight due to the PA441 delay"
+  },
+  {
+    "id": "tc_048",
+    "input": "I'm stuck in Paris. My flight to New York was cancelled. I need to get home.",
+    "criteria": "Should help find a replacement flight from Paris toward the customer's destination"
+  },
+  {
+    "id": "tc_049",
+    "input": "My connecting flight NY802 was cancelled. I need to get to Austin today.",
+    "criteria": "Should book a replacement flight to Austin and confirm the new details"
+  },
+  {
+    "id": "tc_050",
+    "input": "Can I see the seat map for my flight?",
+    "criteria": "Should display or offer to display the interactive seat map"
+  },
+  {
+    "id": "tc_051",
+    "input": "I would like to change my seat to a window seat.",
+    "criteria": "Should update the customer's seat to a window seat and confirm the change"
+  },
+  {
+    "id": "tc_052",
+    "input": "Can I move to an aisle seat?",
+    "criteria": "Should update the customer's seat to an aisle seat and confirm"
+  },
+  {
+    "id": "tc_053",
+    "input": "Please change my seat to 14C.",
+    "criteria": "Should update the seat assignment to 14C and confirm"
+  },
+  {
+    "id": "tc_054",
+    "input": "I'd like to move to a seat in row 10.",
+    "criteria": "Should change the seat to row 10 and confirm the update"
+  },
+  {
+    "id": "tc_055",
+    "input": "I want to upgrade to Economy Plus for the extra legroom.",
+    "criteria": "Should assign a seat in Economy Plus rows (5–8) and confirm"
+  },
+  {
+    "id": "tc_056",
+    "input": "Can I switch to a seat closer to the front of the plane?",
+    "criteria": "Should move the customer to a seat nearer the front and confirm the change"
+  },
+  {
+    "id": "tc_057",
+    "input": "I want to sit in an exit row. Can you arrange that?",
+    "criteria": "Should assign or attempt to assign an exit row seat and confirm"
+  },
+  {
+    "id": "tc_058",
+    "input": "I need a front row seat for medical reasons.",
+    "criteria": "Should assign a front row seat with a special service flag for medical needs"
+  },
+  {
+    "id": "tc_059",
+    "input": "I require wheelchair assistance and need a seat near the front.",
+    "criteria": "Should arrange a suitable front seat and record the wheelchair assistance requirement"
+  },
+  {
+    "id": "tc_060",
+    "input": "I have a back condition and need an aisle seat with extra legroom.",
+    "criteria": "Should assign an aisle seat with extra legroom or an Economy Plus aisle seat for the medical condition"
+  },
+  {
+    "id": "tc_061",
+    "input": "I'm traveling with a service animal and need appropriate seating.",
+    "criteria": "Should accommodate a service animal seating request or record the special service need"
+  },
+  {
+    "id": "tc_062",
+    "input": "I have severe anxiety about flying and would prefer a seat near the front exit.",
+    "criteria": "Should assign a seat near the front or exit and acknowledge the special need"
+  },
+  {
+    "id": "tc_063",
+    "input": "My doctor has recommended I sit in the first row. Can you arrange this?",
+    "criteria": "Should assign a first-row seat with a medical or special service flag"
+  },
+  {
+    "id": "tc_064",
+    "input": "My flight was delayed and I missed my connection. Can I get compensation?",
+    "criteria": "Should open a compensation case and explain what support is available"
+  },
+  {
+    "id": "tc_065",
+    "input": "I was delayed 5 hours. I want to file a compensation claim.",
+    "criteria": "Should open a compensation case for the 5-hour delay"
+  },
+  {
+    "id": "tc_066",
+    "input": "My flight was cancelled and I had to pay for a hotel. Can I be reimbursed?",
+    "criteria": "Should open a compensation case and explain the reimbursement or voucher process"
+  },
+  {
+    "id": "tc_067",
+    "input": "I need a hotel voucher. My connection was missed because of a delay.",
+    "criteria": "Should issue a hotel voucher for the missed connection"
+  },
+  {
+    "id": "tc_068",
+    "input": "Flight PA441 was delayed and I missed NY802. I need compensation.",
+    "criteria": "Should open a compensation case for PA441 delay causing a missed NY802 connection"
+  },
+  {
+    "id": "tc_069",
+    "input": "Can I get meal vouchers? I've been waiting at the airport for 4 hours.",
+    "criteria": "Should issue or arrange meal vouchers for the extended wait"
+  },
+  {
+    "id": "tc_070",
+    "input": "I missed my Austin connection because of the Paris delay. What am I entitled to?",
+    "criteria": "Should explain compensation entitlements and open a case if appropriate"
+  },
+  {
+    "id": "tc_071",
+    "input": "I need to file a claim for my missed connection on the Paris to Austin route.",
+    "criteria": "Should open a compensation case for the missed connection"
+  },
+  {
+    "id": "tc_072",
+    "input": "I had to take a taxi because the airline cancelled my flight. Can I claim that cost?",
+    "criteria": "Should open a compensation case and advise on keeping receipts for ground transport costs"
+  },
+  {
+    "id": "tc_073",
+    "input": "What is the refund policy for cancelled flights?",
+    "criteria": "Should explain the refund policy when a flight is cancelled by the airline"
+  },
+  {
+    "id": "tc_074",
+    "input": "Can I get a refund if I cancel my own booking?",
+    "criteria": "Should explain refund eligibility when the customer initiates a cancellation"
+  },
+  {
+    "id": "tc_075",
+    "input": "How long does it take to process a refund?",
+    "criteria": "Should provide information about the refund processing timeline"
+  },
+  {
+    "id": "tc_076",
+    "input": "I cancelled my trip last week. When will I receive my refund?",
+    "criteria": "Should address the refund timeline for a recently cancelled booking"
+  },
+  {
+    "id": "tc_077",
     "input": "What are the check-in times for my flight?",
-    "criteria": "Should provide check-in time information or windows"
+    "criteria": "Should provide check-in time windows or direct the customer appropriately"
+  },
+  {
+    "id": "tc_078",
+    "input": "When does online check-in open?",
+    "criteria": "Should state when online check-in becomes available or advise the customer"
+  },
+  {
+    "id": "tc_079",
+    "input": "Can I check in at the airport on the day of my flight?",
+    "criteria": "Should confirm whether same-day airport check-in is available"
+  },
+  {
+    "id": "tc_080",
+    "input": "I'm in Paris and my flight PA441 to New York is delayed. I have a connection to Austin. What should I do?",
+    "criteria": "Should identify the disruption, assess the missed connection risk, and outline rebooking or compensation options"
+  },
+  {
+    "id": "tc_081",
+    "input": "My Paris to New York flight was cancelled. I need a new flight and want to know about compensation for the hotel I paid for.",
+    "criteria": "Should rebook the customer on an alternative flight and open a compensation case for hotel costs"
+  },
+  {
+    "id": "tc_082",
+    "input": "Flight PA441 is delayed 5 hours. I'll miss NY802. Can you rebook me on the next Austin flight and arrange a hotel voucher?",
+    "criteria": "Should rebook the customer on an Austin flight and issue a hotel voucher"
+  },
+  {
+    "id": "tc_083",
+    "input": "I'm on the Paris to Austin trip via New York. PA441 is late and I won't make NY802. Can you sort everything out for me?",
+    "criteria": "Should assess connection risk, rebook the Austin leg, and arrange compensation"
+  },
+  {
+    "id": "tc_084",
+    "input": "PA441 delayed. Missed NY802. I need a new Austin flight, hotel for tonight, and a window seat on the new flight.",
+    "criteria": "Should rebook on an Austin flight, issue a hotel voucher, and assign a window seat"
+  },
+  {
+    "id": "tc_085",
+    "input": "Can you check the status of PA441 and, if it's delayed, find me an alternative flight?",
+    "criteria": "Should check flight status and proactively offer alternatives if a delay is confirmed"
+  },
+  {
+    "id": "tc_086",
+    "input": "I need to cancel my current booking and rebook on the next available flight to Austin.",
+    "criteria": "Should cancel the existing booking and rebook the customer on an Austin flight"
+  },
+  {
+    "id": "tc_087",
+    "input": "Please cancel my flight, and also let me know what compensation I'm entitled to.",
+    "criteria": "Should cancel the flight and explain any applicable compensation or refund entitlement"
+  },
+  {
+    "id": "tc_088",
+    "input": "I've been rebooked on a new flight. Can I change my seat and also get meal vouchers for the wait?",
+    "criteria": "Should update the seat assignment and arrange meal vouchers for the delay period"
+  },
+  {
+    "id": "tc_089",
+    "input": "My connecting flight is cancelled. I need a replacement flight and I have a medical seating requirement for the front row.",
+    "criteria": "Should book a replacement flight and assign a front row seat with a medical flag"
+  },
+  {
+    "id": "tc_090",
+    "input": "I don't know my flight number but I'm flying from Paris to Austin through New York tomorrow.",
+    "criteria": "Should look up or infer the itinerary details and provide relevant assistance"
+  },
+  {
+    "id": "tc_091",
+    "input": "Something went wrong with my trip. I was supposed to be in Austin by now.",
+    "criteria": "Should ask for or look up itinerary details and help the customer understand their options"
+  },
+  {
+    "id": "tc_092",
+    "input": "I've been at the airport for 6 hours. My flight keeps getting delayed. I want a hotel and a new flight.",
+    "criteria": "Should open a compensation case for the extended delay and assist with rebooking"
+  },
+  {
+    "id": "tc_093",
+    "input": "What happened to my Paris flight? It was supposed to leave 3 hours ago.",
+    "criteria": "Should check flight status and explain the delay or cancellation situation"
+  },
+  {
+    "id": "tc_094",
+    "input": "My bag is missing and my flight was delayed. I want to sort both of these out.",
+    "criteria": "Should address both the missing baggage situation and the delay compensation in the same interaction"
+  },
+  {
+    "id": "tc_095",
+    "input": "I was upgraded to business class but my seat assignment looks wrong. Can you fix it and show me the seat map?",
+    "criteria": "Should correct the seat assignment and display the seat map"
+  },
+  {
+    "id": "tc_096",
+    "input": "My delay was only 2 hours but I still missed my connection. Am I entitled to anything?",
+    "criteria": "Should explain the compensation policy in context of a sub-3-hour delay that still caused a missed connection"
+  },
+  {
+    "id": "tc_097",
+    "input": "The airline rebooked me on a flight that arrives a full day later. What compensation am I owed?",
+    "criteria": "Should explain the compensation entitlements for a rebooking that causes a significant arrival delay"
+  },
+  {
+    "id": "tc_098",
+    "input": "I cancelled my flight voluntarily but then the airline cancelled that same route anyway. Can I get a full refund?",
+    "criteria": "Should address refund eligibility given both a voluntary cancellation and a subsequent airline cancellation of the same route"
+  },
+  {
+    "id": "tc_099",
+    "input": "I need front row seating for medical reasons, but I've already been rebooked on a new flight due to a delay. Can you make sure the medical seating carries over to my new flight?",
+    "criteria": "Should verify or reassign front row medical seating on the replacement flight"
+  },
+  {
+    "id": "tc_100",
+    "input": "I was on PA441 which was delayed. I missed NY802. I've been rebooked but I want to confirm my new flight details, check my seat, and make sure hotel and meal vouchers have been issued.",
+    "criteria": "Should confirm the rebooking details, verify the seat assignment, and confirm hotel and meal vouchers have been issued"
   }
 ]
