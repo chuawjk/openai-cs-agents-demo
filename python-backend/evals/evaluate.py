@@ -27,7 +27,7 @@ def _results_dir(run_timestamp: str) -> str:
 
 def write_results_csv(rows: list[dict], run_timestamp: str) -> str:
     path = os.path.join(_results_dir(run_timestamp), "eval_results.csv")
-    fieldnames = ["id", "input", "criteria", "response", "passed", "reason", "run_timestamp"]
+    fieldnames = ["id", "category", "input", "criteria", "response", "passed", "reason", "run_timestamp"]
     with open(path, "w", newline="") as f:
         writer = csv.DictWriter(f, fieldnames=fieldnames)
         writer.writeheader()
@@ -55,6 +55,7 @@ async def run_evaluation() -> None:
         verdict = judge_response(tc["input"], output.response, tc["criteria"])
         rows.append({
             "id": tc["id"],
+            "category": tc["category"],
             "input": tc["input"],
             "criteria": tc["criteria"],
             "response": output.response,
