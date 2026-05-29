@@ -3,7 +3,7 @@ from dataclasses import dataclass
 
 import openai
 
-_client = openai.OpenAI()
+_client = openai.AsyncOpenAI()
 
 _SYSTEM_PROMPT = """\
 You are evaluating an airline customer service multi-agent system.
@@ -45,7 +45,7 @@ def _format_trace(trace: dict) -> str:
     return "\n".join(lines)
 
 
-def judge_response(user_input: str, response: str, criteria: str, trace: dict | None = None) -> JudgeResult:
+async def judge_response(user_input: str, response: str, criteria: str, trace: dict | None = None) -> JudgeResult:
     trace_section = ""
     if trace:
         trace_section = f"\nAgent execution trace:\n{_format_trace(trace)}\n"
@@ -55,7 +55,7 @@ def judge_response(user_input: str, response: str, criteria: str, trace: dict | 
         f"Final agent response: {response}\n\n"
         f"Success criterion: {criteria}"
     )
-    completion = _client.chat.completions.create(
+    completion = await _client.chat.completions.create(
         model="gpt-4o-mini",
         messages=[
             {"role": "system", "content": _SYSTEM_PROMPT},
