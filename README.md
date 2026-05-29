@@ -174,7 +174,7 @@ There are two mock itineraries so both scenarios continue to work: the disrupted
 Run the eval harness to assess chatbot quality:
 
 ```bash
-python evaluate.py
+cd python-backend && python -m evals.evaluate
 ```
 
 Results are printed to stdout.
