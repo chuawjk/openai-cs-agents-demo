@@ -169,6 +169,16 @@ This flow demonstrates how the system not only routes requests to the appropriat
 
 There are two mock itineraries so both scenarios continue to work: the disrupted Paris -> New York -> Austin trip (PA441/NY802 with rebook to NY950) and the existing on-time flight (FLT-123) used in the first two demo flows.
 
+## Evaluation
+
+Run the eval harness to assess chatbot quality:
+
+```bash
+cd python-backend && python -m evals.evaluate
+```
+
+Results are printed to stdout.
+
 ## Contributing
 
 You are welcome to open issues or submit PRs to improve this app, however, please note that we may not review all suggestions.
